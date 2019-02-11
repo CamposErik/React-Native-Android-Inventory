@@ -19,8 +19,6 @@
  *  @copyright Copyright © 2018 Teclib. All rights reserved.
  *  @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
  *  @link      https://github.com/flyve-mdm/android-inventory-library
- *  @link      https://flyve-mdm.com
- *  @link      http://flyve.org/android-inventory-library
  *  ---------------------------------------------------------------------
  */
 

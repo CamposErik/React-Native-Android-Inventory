@@ -1,4 +1,6 @@
 
+'use strict';
+
 import { NativeModules } from 'react-native';
 
-module.exports = NativeModules.RNAndroidInventoryModule;
+module.exports = NativeModules.CreateInventory;
