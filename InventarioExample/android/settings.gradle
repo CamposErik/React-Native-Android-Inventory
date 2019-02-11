@@ -1,0 +1,5 @@
+rootProject.name = 'InventarioExample'
+include ':android-inventory'
+project(':android-inventory').projectDir = new File(rootProject.projectDir, '../node_modules/android-inventory/android')
+
+include ':app'
