@@ -30,9 +30,9 @@ import android.content.Context;
 import android.os.Build;
 import android.provider.Settings.Secure;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
-import org.flyve.inventory.Utils;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
+import com.reactlibrary.Utils;
 import org.w3c.dom.Document;
 
 import java.io.BufferedReader;

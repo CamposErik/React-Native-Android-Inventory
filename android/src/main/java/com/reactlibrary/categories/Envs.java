@@ -28,7 +28,7 @@ package com.reactlibrary.categories;
 
 import android.content.Context;
 
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.FlyveLog;
 
 import java.util.Map;
 

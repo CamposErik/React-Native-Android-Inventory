@@ -31,8 +31,8 @@ import android.content.Context;
 import android.graphics.Point;
 import android.view.WindowManager;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
 
 /**
  * This class get all the information of the Video

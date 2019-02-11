@@ -28,8 +28,8 @@ package com.reactlibrary.categories;
 
 import android.os.Build;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlSerializer;

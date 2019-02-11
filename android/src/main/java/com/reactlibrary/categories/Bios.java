@@ -29,9 +29,9 @@ package com.reactlibrary.categories;
 import android.content.Context;
 import android.os.Build;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
-import org.flyve.inventory.Utils;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
+import com.reactlibrary.Utils;
 
 import java.io.BufferedReader;
 import java.io.File;

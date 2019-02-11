@@ -39,7 +39,7 @@ import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
-import org.flyve.inventory.categories.Categories;
+import com.reactlibrary.categories.Categories;
 
 import java.io.File;
 import java.lang.reflect.Constructor;
@@ -48,7 +48,8 @@ import java.util.ArrayList;
 /**
  * This class generate the XML file
  */
-public class InventoryTask {
+public class InventoryTask  {
+
 
     /**
      * Set if show FlyveLog in console
@@ -81,7 +82,7 @@ public class InventoryTask {
 
     /**
      * This constructor return a Success XML or Error on asynchronous way
-     * @param context The context to be use
+     *  @param context    The context to be use
      * @param appVersion The name of the agent
      */
     public InventoryTask(Context context, String appVersion, Boolean storeResult) {
@@ -91,7 +92,7 @@ public class InventoryTask {
 
     /**
      * This constructor return a Success XML or Error on asynchronous way
-     * @param context The context to be use
+     * @param context    The context to be use
      * @param appVersion The name of the agent
      */
     public InventoryTask(Context context, String appVersion, Boolean storeResult, String[] categories) {
@@ -102,9 +103,10 @@ public class InventoryTask {
 
     /**
      * This constructor return a Success XML or Error on asynchronous way
-     * @param storeResult Indicate is the result will be stored on file
+     * 
+     *  storeResult Indicate is the result will be stored on file
      */
-    private InventoryTask(Boolean storeResult) {
+    public InventoryTask(Boolean storeResult) {
         this.storeResult = storeResult;
     }
 
@@ -123,6 +125,7 @@ public class InventoryTask {
 
     /**
      * This function load all the categories class dynamically
+     * 
      * @return ArrayList<Categories>
      */
     @SuppressWarnings("unchecked")
@@ -133,27 +136,26 @@ public class InventoryTask {
 
         Class<Categories> catClass;
 
-        for(String c : categories) {
+        for (String c : categories) {
             FlyveLog.v(String.format("new INVENTORY of %s", c));
 
             // Loading the class with name of the ArrayList
             try {
                 Class cCat = Class.forName(String.format("org.flyve.inventory.categories.%s", c));
-                catClass = (Class<Categories>)cCat;
+                catClass = (Class<Categories>) cCat;
 
-            }
-            catch (Exception ex) {
-                FlyveLog.e( ex.getCause().toString() );
+            } catch (Exception ex) {
+                FlyveLog.e(ex.getCause().toString());
                 throw new FlyveException(ex.getMessage(), ex.getCause());
             }
 
             // Instance the class and checking errors
-            if(catClass!=null) {
+            if (catClass != null) {
                 try {
                     Constructor<Categories> co = catClass.getConstructor(Context.class);
                     mContent.add(co.newInstance(ctx));
-                } catch ( Exception ex ) {
-                    FlyveLog.e( ex.getCause().toString() );
+                } catch (Exception ex) {
+                    FlyveLog.e(ex.getCause().toString());
                     throw new FlyveException(ex.getMessage(), ex.getCause());
                 }
             }
@@ -162,29 +164,9 @@ public class InventoryTask {
     }
 
     public String[] getCategories() {
-        return new String[]{
-                "Hardware",
-                "User",
-                "Storage",
-                "OperatingSystem",
-                "Bios",
-                "Memory",
-                "Inputs",
-                "Sensors",
-                "Drives",
-                "Cpus",
-                "Simcards",
-                "Videos",
-                "Cameras",
-                "Networks",
-                "Envs",
-                "Jvm",
-                "Software",
-                "Usb",
-                "Battery",
-                "Controllers",
-                "Modems"
-        };
+        return new String[] { "Hardware", "User", "Storage", "OperatingSystem", "Bios", "Memory", "Inputs", "Sensors",
+                "Drives", "Cpus", "Simcards", "Videos", "Cameras", "Networks", "Envs", "Jvm", "Software", "Usb",
+                "Battery", "Controllers", "Modems" };
     }
 
     public void setTag(String tag) {
@@ -205,23 +187,24 @@ public class InventoryTask {
 
     /**
      * Return a XML String or Error OnTaskCompleted interface
+     * 
      * @param listener the interface OnTaskCompleted
      */
     public void getXML(final OnTaskCompleted listener) {
 
         running = true;
-        Thread t = new Thread(new Runnable()
-        {
+        Thread t = new Thread(new Runnable() {
             public void run() {
 
                 try {
                     ArrayList<Categories> mContent = loadCategoriesClass();
-                    String xml = Utils.createXML(ctx, mContent, InventoryTask.this.appVersion, getPrivateData(), getTag());
+                    String xml = Utils.createXML(ctx, mContent, InventoryTask.this.appVersion, getPrivateData(),
+                            getTag());
                     xml = xml.replaceAll("&lt;", "<");
                     xml = xml.replaceAll("&gt;", ">");
                     xml = xml.replaceAll("&", "");
 
-                    if(storeResult) {
+                    if (storeResult) {
                         Utils.storeFile(xml, fileNameXML);
                     }
 
@@ -251,26 +234,27 @@ public class InventoryTask {
 
     /**
      * Return a JSON String or Error OnTaskCompleted interface
+     * 
      * @param listener the interface OnTaskCompleted
      */
     public void getJSON(final OnTaskCompleted listener) {
         running = true;
-        Thread t = new Thread(new Runnable()
-        {
+        Thread t = new Thread(new Runnable() {
             public void run() {
 
                 try {
                     ArrayList<Categories> mContent = loadCategoriesClass();
-                    final String json = Utils.createJSON(ctx, mContent, InventoryTask.this.appVersion, getPrivateData(), getTag());
+                    final String json = Utils.createJSON(ctx, mContent, InventoryTask.this.appVersion, getPrivateData(),
+                            getTag());
 
-                    if(storeResult) {
+                    if (storeResult) {
                         Utils.storeFile(json, fileNameJSON);
                     }
 
                     InventoryTask.runOnUI(new Runnable() {
                         public void run() {
                             running = false;
-                            listener.onTaskSuccess( json );
+                            listener.onTaskSuccess(json);
                         }
                     });
 
@@ -297,7 +281,7 @@ public class InventoryTask {
             ArrayList<Categories> mContent = loadCategoriesClass();
             String json = Utils.createJSON(ctx, mContent, InventoryTask.this.appVersion, getPrivateData(), getTag());
 
-            if(storeResult) {
+            if (storeResult) {
                 Utils.storeFile(json, fileNameJSON);
             }
 
@@ -317,7 +301,7 @@ public class InventoryTask {
             ArrayList<Categories> mContent = loadCategoriesClass();
             String xml = Utils.createXML(ctx, mContent, InventoryTask.this.appVersion, getPrivateData(), getTag());
 
-            if(storeResult) {
+            if (storeResult) {
                 Utils.storeFile(xml, fileNameXML);
             }
 
@@ -329,11 +313,11 @@ public class InventoryTask {
         }
     }
 
-    public void shareInventory(int type){
+    public void shareInventory(int type) {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         String path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
-        if(type==1) {
+        if (type == 1) {
             intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(path + "/Inventory.json")));
         } else {
             intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File(path + "/Inventory.xml")));
@@ -348,15 +332,18 @@ public class InventoryTask {
 
         /**
          * if everything is Ok
+         * 
          * @param data String
          */
         void onTaskSuccess(String data);
 
         /**
          * if something wrong
+         * 
          * @param error String
          */
         void onTaskError(Throwable error);
 
+        void onTaskCompleted(String data);
     }
 }

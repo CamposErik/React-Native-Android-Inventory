@@ -29,8 +29,8 @@ package com.reactlibrary.categories;
 import android.content.Context;
 import android.content.res.Configuration;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
 
 /**
  * This class get all the information of the Inputs

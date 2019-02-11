@@ -33,7 +33,7 @@ import android.telephony.TelephonyManager;
 import android.text.format.DateFormat;
 import android.util.Xml;
 
-import org.flyve.inventory.categories.Categories;
+import com.reactlibrary.categories.Categories;
 import org.json.JSONObject;
 import org.xmlpull.v1.XmlSerializer;
 

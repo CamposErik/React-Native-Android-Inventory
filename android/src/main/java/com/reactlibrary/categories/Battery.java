@@ -32,8 +32,8 @@ import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.os.Build;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
 
 /**
  * This class get all the information of the baterry like level, voltage, temperature, status, health, technology

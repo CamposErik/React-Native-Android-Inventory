@@ -31,9 +31,9 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
-import org.flyve.inventory.Utils;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
+import com.reactlibrary.Utils;
 
 import java.io.File;
 import java.util.List;

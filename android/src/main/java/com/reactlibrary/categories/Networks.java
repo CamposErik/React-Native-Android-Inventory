@@ -32,9 +32,9 @@ import android.net.DhcpInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
-import org.flyve.inventory.Utils;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
+import com.reactlibrary.Utils;
 
 import java.math.BigInteger;
 import java.net.Inet4Address;

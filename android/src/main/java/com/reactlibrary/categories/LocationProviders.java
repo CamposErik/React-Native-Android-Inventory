@@ -31,8 +31,8 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
 
 import java.util.List;
 

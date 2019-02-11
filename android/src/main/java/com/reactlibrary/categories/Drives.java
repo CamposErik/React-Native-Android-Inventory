@@ -30,8 +30,8 @@ import android.content.Context;
 import android.os.Environment;
 import android.os.StatFs;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
 
 import java.io.BufferedReader;
 import java.io.File;

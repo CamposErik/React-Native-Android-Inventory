@@ -37,9 +37,9 @@ import android.os.Build;
 import android.util.Size;
 import android.util.SizeF;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
-import org.flyve.inventory.Utils;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
+import com.reactlibrary.Utils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

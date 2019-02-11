@@ -28,10 +28,10 @@ package com.reactlibrary.categories;
 
 import android.content.Context;
 
-import org.flyve.inventory.CommonErrorType;
-import org.flyve.inventory.FlyveLog;
-import org.flyve.inventory.usbManager.SysBusUsbDevice;
-import org.flyve.inventory.usbManager.SysBusUsbManager;
+import com.reactlibrary.CommonErrorType;
+import com.reactlibrary.FlyveLog;
+import com.reactlibrary.usbManager.SysBusUsbDevice;
+import com.reactlibrary.usbManager.SysBusUsbManager;
 
 import java.util.Map;
 
