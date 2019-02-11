@@ -1,22 +1,52 @@
 {
-  "name": "android-inventory",
-  "version": "1.1.0",
-  "description": "## Getting started",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "_from": "react-native-android-inventory",
+  "_id": "react-native-android-inventory@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-uCloNaOEs+X8G20i0zkVUXgjhF2rqdbjFYlZtGFZzxONqRpNt3XFleAiYiaMfG5mbZhAeh/Y2uOHD5ZkpsmBkQ==",
+  "_location": "/react-native-android-inventory",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "react-native-android-inventory",
+    "name": "react-native-android-inventory",
+    "escapedName": "react-native-android-inventory",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/android-inventory/-/android-inventory-1.0.0.tgz",
+  "_shasum": "1521b615128b9d5d31f0e144c452e41b632e3ea8",
+  "_spec": "android-inventory",
+  "_where": "C:\\Users\\erikc\\FlyveMDM\\InventarioExample",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/CamposErik/React-Native-Android-Inventory/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "## Getting started",
+  "homepage": "https://github.com/CamposErik/React-Native-Android-Inventory#readme",
   "keywords": [
     "react-native"
   ],
-  "author": "",
   "license": "ISC",
+  "main": "index.js",
+  "name": "react-native-android-inventory",
   "peerDependencies": {
     "react-native": "^0.41.2",
     "react-native-windows": "0.41.0-rc.1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CamposErik/React-Native-Android-Inventory"
-  }
+    "url": "git+https://github.com/CamposErik/React-Native-Android-Inventory.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }
